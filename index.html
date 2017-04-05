@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Course Android Development</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="During this course you will learn how to build Android apps. Each week the learner has to perform several tasks. In each task the learner builds a complete app.">
+    <meta name="keywords" content="Android, mobile, course, apps, 4C/ID, online, education">
+    <meta name="author" content="Marco Marcellis">
+
+    <!--
+		Next link is necessary for using the google font Roboto
+		-->
+
+    <link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+
+    <!-- Links van themeroller
+		let op voor google drive alles in https
+		-->
+
+    <link rel="stylesheet" href="themes/courseTheme.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+
+    <!--
+		<link rel="stylesheet" type="text/css" href="css/course.css" />
+		-->
+
+    <!--
+		deze weggehaald ivm themeroller
+
+		<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+
+		-->
+
+    <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDCddhy4HfWcLm3fGh0U6p0qxeQnDQSa1c"
+            , authDomain: "mobiledevelopment-698f9.firebaseapp.com"
+            , databaseURL: "https://mobiledevelopment-698f9.firebaseio.com"
+            , storageBucket: "mobiledevelopment-698f9.appspot.com"
+            , messagingSenderId: "1037321758761"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+
+
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/courseJS.js"></script>
+
+    <!-- script voor google analytics -->
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] ||
+                function () {
+                    (i[r].q = i[r].q || []).push(arguments);
+                }, i[r].l = 1 * new Date();
+            a = s.createElement(o)
+                , m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-55761271-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+</head>
+
+<body>
+
+    <!--PanelFront -->
+
+    <div data-role="panel" id="FrontPanel" data-theme="c" data-position="right" data-display="overlay">
+
+        <a href="#pageF" data-theme="c" data-rel="close" class="ui-btn ui-btn-inline ui-mini ui-shadow ui-corner-all">Close</a>
+
+        <ul data-role="listview">
+            <li data-role="collapsible" data-iconpos="right" data-inset="false">
+                Lynda.com tutorial
+                <ul data-role="listview">
+                    <li>
+                        <a href="//developer.android.com/index.html" target="_blank">
+                            <p>
+                                Android developer site
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="//android-developers.googleblog.com/" target="_blank">
+                            <p>
+                                Android Blog
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://developers.google.com/" target="_blank">
+                            <p>
+                                Google android site
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://console.developers.google.com" target="_blank">
+                            <p>
+                                Googe console api
+                            </p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="//www.materialpalette.com/" target="_blank">
+                            <p>
+                                Material Design Colors
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+
+                        <a href="//materialdesignicons.com/" target="_blank">
+                            <p>
+                                Icons
+                            </p>
+                        </a>
+                    </li>
+
+
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <!--Panel0 -->
+
+    <div data-role="panel" id="myPanel0" data-theme="c" data-position="right" data-display="overlay">
+
+        <a href="#page0" data-theme="c" data-rel="close" class="ui-btn ui-btn-inline ui-mini ui-shadow ui-corner-all">Close</a>
+
+        <ul data-role="listview">
+            <li data-role="list-divider">
+                Lynda.com tutorials
+            </li>
+            <li>
+                <a href="//www.lynda.com/Java-tutorials/Java-Essential-Training/377484-2.html?org=hva.nl">
+                    <p>
+                        Java Essential Training
+                    </p>
+
+                </a>
+            </li>
+
+            <li>
+                <a href="https://www.lynda.com/Java-tutorials/Foundations-Programming-Object-Oriented-Design/96949-2.html?org=hva.nl">
+                    <p>
+                        Object-oriented-design
+                    </p>
+
+                </a>
+            </li>
+
+            <li>
+                <a href="//www.lynda.com/XML-tutorials/XML-Essential-Training/145930-2.html?org=hva.nl" target="_blank">
+                    <p>
+                        XML essentials
+                    </p>
+
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!--Panel1 -->
+
+    <div data-role="panel" id="myPanel1" data-theme="c" data-position="right" data-display="overlay">
+
+        <a href="#page1" data-theme="c" data-rel="close" class="ui-btn ui-btn-inline ui-mini ui-shadow ui-corner-all">Close</a>
+
+        <ul data-role="listview">
+            <li data-role="collapsible" data-iconpos="right" data-inset="false">
+                Lynda.com tutorial
+                <ul data-role="listview">
+                    <li>
+                        <a href="https://www.lynda.com/Android-tutorials/Android-App-Development-Essentials-Create-Your-First-App/518053-2.html?org=hva.nl" target="_blank">
+                            <p>
+                                Android Building your first app
+                            </p>
+                            <p>
+                                <strong>chapter 1 - 3</strong>
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.lynda.com/Developer-tutorials/Learning-Android-App-Development-Design-User-Interface/518054-2.html?org=hva.nl" target="_blank">
+                            <p>
+                                Design an user interface
+                                <br>
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li data-role="collapsible" data-iconpos="right" data-inset="false">
+                Teacher resources
+
+                <ul data-role="listview">
+                    <li>
+                        <a href="//docs.google.com/presentation/d/1IueHN7jzewUSV8P0H0FQeXvVXrB4h7q1X5HlNabAERM/edit?usp=sharing" target="_blank">
+                            <p>
+                                presentation week 1
+                            </p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="//docs.google.com/document/d/16ZzK4P5CBCDejzqDSt51xGIxxP0sKF_debk5dGjQKDE/edit?usp=sharing" target="_blank">
+                            <p>
+                                Script Demo week 1
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="//github.com/marcellis/demoweek1" target="_blank">
+                            <p>
+                                Solution Demo week 1
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li data-role="collapsible" data-iconpos="right" data-inset="false">
+                Android developer
+
+                <ul data-role="listview">
+
+                    <li>
+
+                        <a href="//developer.android.com/sdk/index.html" target="_blank">
+                            <p>
+                                Android Studio Download
+                            </p>
+                        </a>
+                    </li>
+
+                    <li>
+
+                        <a href="//developer.android.com/tools/device.html" target="_blank">
+                            <p>
+                                Using Hardware devices
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+
+                        <a href="//developer.android.com/studio/run/managing-avds.html" target="_blank">
+                            <p>
+                                Create and manage virtual devices
+                            </p>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!--Panel2 -->
+
+    <div data-role="panel" id="myPanel2" data-theme="c" data-position="right" data-display="overlay">
+
+        <a href="#page2" data-theme="c" data-rel="close" class="ui-btn ui-btn-inline ui-mini ui-shadow ui-corner-all">Close</a>
+
+        <ul data-role="listview" data-inset="true">
+            <li data-role="collapsible" data-iconpos="right" data-inset="false">
+                Lynda.com tutorial
+                <ul data-role="listview">
+                    <li>
+                        <li>
+                            <a href="//www.lynda.com/Android-tutorials/Android-Communicating-User/513591-2.html?org=hva.nl" target="_blank">
+                                <p>
+                                    Communicating with the User
+                                </p>
+                                <p>
+                                    <strong>chapter 1 - 3</strong>
+                                </p>
+                            </a>
+                        </li>
+                </ul>
+                </li> a`
+                <li data-role="collapsible" data-iconpos="right" data-inset="false">
+                    Teacher resources
+
+                    <ul data-role="listview">
+
+                        <li>
+                            <a href="//docs.google.com/presentation/d/1U8KzKPbtYIHYQMT7E4UyKEjXwCH6WYiiM5qtd2WbBHk/edit?usp=sharing
+							" target="_blank">
+                                <p>
+                                    presentation week 2
+                                </p>
+                            </a>
+
+                        </li>
+
+                        <li>
+                            <a href="//docs.google.com/document/d/1hmfUN_pQbQ6lyhlPTl3KOhv8SAz9we-d3ay4II2qilA/edit" target="_blank">
+                                <p>
+                                    Script Demo week 2
+                                </p>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="//docs.google.com/presentation/d/1oViW6enEM0IvtpkJngJW6aguQ2A1jmD1Ibcll05hcrY/edit?usp=sharing" target="_blank">
+                                <p>
+                                    Practical week 2
+                                </p>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="//github.com/marcellis/demoweek2" target="_blank">
+                                <p>
+                                    Solution Demo week 2
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li data-role="collapsible" data-iconpos="right" data-inset="false">
+                    Android developer
+
+                    <ul data-role="listview">
+
+                        <li>
+                            <a href="//developer.android.com/guide/components/activities.html" target="_blank">
+                                <p>
+                                    Activities
+                                </p>
+                            </a>
+
+                        </li>
+
+                        <li>
+                            <a href="//developer.android.com/guide/components/intents-filters.html" target="_blank">
+                                <p>
+                                    Intents
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+        </ul>
+    </div>
+
+
+    <!--Panel3 -->
+
+    <div data-role="panel" id="myPanel3" data-theme="c" data-position="right" data-display="overlay">
+
+        <a href="#page3" data-theme="c" data-rel="close" class="ui-btn ui-btn-inline ui-mini ui-shadow ui-corner-all">Close</a>
+
+        <ul data-role="listview" data-inset="true">
+            <li data-role="list-divider">
+                Teacher resources
+            </li>
+
+            <li>
+                <a href="//docs.google.com/presentation/d/16F3kXA1XZji3899O5Kjd5pQJb0lYrbVNiz5_uK4lZo4/edit?usp=sharing" target="_blank">
+                    <p>
+                        presentation week 3
+                    </p>
+                </a>
+
+            </li>
+            <li>
+                <a href="//github.com/marcellis/demoweek3" target="_blank">
+                    <p>
+                        Solution Demo week 3
+                    </p>
+                </a>
+            </li>
+            <li>
+                <a href="//docs.google.com/document/d/1B6MS2lWRdG-fsDbyIpIDkqwrQe6WEmG5whjUS0VMnE0/edit?usp=sharing" target="_blank">
+                    <p>
+                        Script Demo week 3
+                    </p>
+                </a>
+            </li>
+
+
+
+
+
+        </ul>
+    </div>
+
+
+
+    <!--Panel4 -->
+
+    <div data-role="panel" id="myPanel4" data-theme="c" data-position="right" data-display="overlay">
+
+        <a href="#page4" data-theme="c" data-rel="close" class="ui-btn ui-btn-inline ui-mini ui-shadow ui-corner-all">Close</a>
+
+        <ul data-role="listview" data-inset="true">
+            <li data-role="list-divider">
+                Lynda tutorials
+            </li>
+
+            <li>
+                <a href="//www.lynda.com/Android-tutorials/Android-App-Development-Essentials-Local-Data-Storage/486757-2.html?org=hva.nl" target="_blank">
+                    <p>
+                        Local Data Storage
+                    </p>
+                </a>
+            </li>
+            <li data-role="list-divider">
+                Teacher resources
+            </li>
+            <li>
+                <a href="//docs.google.com/presentation/d/1Ldi1fLbkDtzTenAQFtNj92V-xsPfVwh8mDtaUIeBIdI/edit?usp=sharing" target="_blank">
+                    <p>
+                        presentation week 4
+                    </p>
+                </a>
+
+            </li>
+            <li>
+                <a href="//github.com/marcellis/demoweek4" target="_blank">
+                    <p>
+                        Solution Demo week 4
+                    </p>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+
+
+    <!--Panel5 -->
+
+    <div data-role="panel" id="myPanel5" data-theme="c" data-position="right" data-display="overlay">
+
+        <a href="#page5" data-theme="c" data-rel="close" class="ui-btn ui-btn-inline ui-mini ui-shadow ui-corner-all">Close</a>
+
+     
+    </div>
+
+
+    <!-- Panel6-->
+
+    <div data-role="panel" id="myPanel6" data-theme="c" data-position="right" data-display="overlay">
+
+        <a href="#page6" data-theme="c" data-rel="close" class="ui-btn ui-btn-inline ui-mini ui-shadow ui-corner-all">Close</a>
+
+        <ul data-role="listview" data-inset="true">
+            <li data-role="list-divider">
+                Lynda.com
+            </li>
+            <li>
+                <a href="//www.lynda.com/Android-tutorials/Building-Flexible-Android-Apps-Fragments-API-Revision/487934-2.html" target="_blank">
+                    <p>
+                        Android Fragments
+
+                    </p>
+                </a>
+            </li>
+            <li data-role="list-divider">
+                Teacher resources
+            </li>
+
+            <li>
+                <a href="//docs.google.com/presentation/d/18hoZfXJHoOEbubtyemH4AmUTZzkgpQFvzct3AjFyNHU/edit?usp=sharing" target="_blank">
+                    <p>
+                        presentation week 6
+                    </p>
+                </a>
+
+            </li>
+
+            <li>
+                <a href="//github.com/marcellis/demoweek5" target="_blank">
+                    <p>
+                        Solution Demo week 6
+                    </p>
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!--Panel7 -->
+    <div data-role="panel" id="myPanel7" data-theme="c" data-position="right" data-display="overlay">
+
+        <a href="#page7" data-theme="c" data-rel="close" class="ui-btn ui-btn-inline ui-mini ui-shadow ui-corner-all">Close</a>
+
+        <ul data-role="listview" data-inset="true" data-theme="c">
+
+            <li data-role="collapsible" data-iconpos="right" data-inset="false">
+                Teacher resources
+
+                <ul data-role="listview">
+
+                    <li>
+                        <a href="//docs.google.com/presentation/d/1BwOF0KFcpGRrKXlyvckmpV7jdNk9ejtaNJB0pUehOyk/edit?usp=sharing" target="_blank">
+                            <p>
+                                presentation week 7
+                            </p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="//github.com/marcellis/demoweek6" target="_blank">
+                            <p>
+                                Solution Demo week 7
+                            </p>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li data-role="collapsible" data-iconpos="right" data-inset="false">
+                Android developer
+
+                <ul data-role="listview">
+
+                    <li>
+                        <a href="//developer.android.com/guide/topics/providers/content-providers.html" target="_blank">
+                            <p>
+                                Content providers
+                            </p>
+                        </a>
+
+                    </li>
+
+                    <li>
+                        <a href="//developer.android.com/guide/components/loaders.html" target="_blank">
+                            <p>
+                                Loaders
+                            </p>
+                        </a>
+
+                    </li>
+
+                </ul>
+            </li>
+
+            <li data-role="collapsible" data-iconpos="right" data-inset="false">
+                Lynda.com
+
+                <ul data-role="listview">
+
+
+                    <li>
+                        <a href="//www.lynda.com/Google-Play-Services-tutorials/Convert-lat-long-address-geocoder/474086/503689-4.html?org=hva.nl" target="_blank">
+                            <p>
+                                Google Play services for Android
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="//www.lynda.com/Android-tutorials/Android-App-Development-Essentials-Distributing-Apps/518057-2.html?org=hva.nl" target="_blank">
+                            <p>
+                                Distributing apps
+                            </p>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
+
+        </ul>
+    </div>
+
+
+    </div>
+
+    <!-- Header -->
+
+    <div data-role="header" id="myHeader" data-theme="c" data-position="fixed">
+        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-icon-back ui-btn-icon-right" data-rel="back">Go Back</a>
+        <h2 id="koptekst"></h2>
+        <a href="#" id="teacher" target="_blank" rel="external" class="ui-btn ui-corner-all ui-shadow ui-icon-user ui-btn-icon-right">Teacher</a>
+        <div data-role="navbar" data-iconpos="right">
+            <ul>
+                <li>
+                    <a href="//" data-icon="home">Home</a>
+                </li>
+                <li>
+                    <a href="#" data-icon="info" id="tutorial" onclick="OpenPanel()"></a>
+                </li>
+
+                <!--
+					<a href="#" id="previousWeek" data-icon="arrow-l"></a>
+
+					<li>
+					<a href="#" id="nextWeek" data-icon="arrow-r"></a>
+					</li>
+					-->
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="footer" id="myFooter" data-theme="c">
+        <div style="text-align:center">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons-Licentie" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            &copy; Amsterdam University of Applied Sciences
+        </div>
+    </div>
+    <!-- frontpage -->
+    <div data-role="page" id="pageF" data-theme="c">
+
+        <div role="main" class="ui-content">
+            <ul data-role="listview" data-inset="true">
+
+                <li>
+                    <a href="#page0" id="week0"> </a>
+                </li>
+            </ul>
+
+            <ol data-role="listview" data-inset="true" start="0">
+
+                <li data-role="list-divider">
+                    Weeks
+                </li>
+                <li>
+                    <a href="#page1" id="week1"> </a>
+                </li>
+                <li>
+                    <a href="#page2" id="week2"> </a>
+                </li>
+                <li>
+                    <a href="#page3" id="week3"> </a>
+                </li>
+                <li>
+                    <a href="#page4" id="week4"> </a>
+                </li>
+                <li>
+                    <a href="#page5" id="week5"> </a>
+                </li>
+                <li>
+                    <a href="#page6" id="week6"> </a>
+                </li>
+                <li>
+                    <a href="#page7" id="week7"> </a>
+                </li>
+            </ol>
+
+        </div>
+
+    </div>
+    <!-- end front page -->
+
+    <!-- page0 -->
+    <div data-role="page" id="page0" data-theme="a">
+
+        <div role="main" class="ui-content">
+            <!-- /content -->
+
+            <ol data-role="listview" data-inset="true" data-theme="c">
+                <li data-role="list-divider">
+                    Subjects
+                </li>
+                <li>
+                    <a href="LearningTask/week0/task1/Week0LearningTask1.html" id="p01"> </a>
+                </li>
+                <li>
+                    <a href="LearningTask/week0/task2/Week0LearningTask2.html" id="p02"> </a>
+                </li>
+                <li>
+                    <a href="LearningTask/week0/task3/Week0LearningTask3.html" id="p03"> </a>
+                </li>
+                <li>
+                    <a href="LearningTask/week0/task4/Week0LearningTask4.html" id="p04"> </a>
+                </li>
+                <li>
+                    <a href="LearningTask/week0/task5/Week0LearningTask5.html" id="p05"> </a>
+                </li>
+
+            </ol>
+        </div>
+    </div>
+
+    <!-- page1 -->
+    <div data-role="page" id="page1" data-theme="a">
+
+        <div role="main" class="ui-content">
+            <!-- /content -->
+
+            <ol data-role="listview" data-inset="true" data-theme="c">
+                <li data-role="list-divider">
+                    Tasks
+                </li>
+                <li>
+                    <a href="LearningTask/week1/task1/Week1LearningTask1.html" id="p11"> </a>
+                </li>
+                <li>
+                    <a href="LearningTask/week1/task2/Week1LearningTask2.html" id="p12"> </a>
+                </li>
+
+            </ol>
+        </div>
+    </div>
+    <!-- /page 1-->
+
+    <!-- page2 -->
+    <div data-role="page" id="page2" data-theme="c">
+
+        <div role="main" class="ui-content">
+            <!-- /content -->
+
+            <ol data-role="listview" data-inset="true" data-theme="c">
+                <li data-role="list-divider">
+                    Tasks
+                </li>
+                <li>
+                    <a href="LearningTask/week2/task1/Week2LearningTask1.html" id="p21"> </a>
+                </li>
+                <li>
+                    <a href="LearningTask/week2/task2/Week2LearningTask2.html" id="p22"> </a>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <!-- /page2 -->
+
+    <!-- page3 -->
+    <div data-role="page" id="page3" data-theme="c">
+
+        <div role="main" class="ui-content">
+            <!-- /content -->
+
+            <ol data-role="listview" data-inset="true">
+                <li data-role="list-divider">
+                    Tasks
+                </li>
+                <li>
+                    <a href="LearningTask/week3/task1/Week3LearningTask1.html" id="p31"> </a>
+                </li>
+                <li>
+                    <a href="LearningTask/week3/task1/Week3LearningTask2.html" id="p32"> </a>
+                </li>
+            </ol>
+
+        </div>
+    </div>
+
+    <!-- page4 -->
+    <div data-role="page" id="page4" data-theme="c">
+
+        <div role="main" class="ui-content">
+            <!-- /content -->
+
+            <ol data-role="listview" data-inset="true" data-theme="c">
+                <li data-role="list-divider">
+                    Tasks
+                </li>
+                <li>
+                    <a href="LearningTask/week4/task1/Week4LearningTask1.html" id="p41"> </a>
+                </li>
+                <li>
+                    <a href="LearningTask/week4/task2/Week4LearningTask2.html" id="p42"> </a>
+                </li>
+
+            </ol>
+        </div>
+    </div>
+
+    <!-- /page4 -->
+
+
+    <!-- /page4 -->
+
+    <!-- page5 -->
+    <div data-role="page" id="page5" data-theme="c">
+
+        <div role="main" class="ui-content">
+
+            <ol data-role="listview" data-inset="true" data-theme="c">
+                <li data-role="list-divider">
+                    Tasks
+                </li>
+                <li>
+                    <a href="LearningTask/week5/task1/Week5LearningTask1.html" id="p51"> </a>
+                </li>
+            </ol>
+
+        </div>
+    </div>
+    <!-- /page5 -->
+
+    <!-- page6 -->
+    <div data-role="page" id="page6" data-theme="c">
+
+        <div role="main" class="ui-content">
+            <!-- /content -->
+
+            <ol data-role="listview" data-inset="true">
+                <li data-role="list-divider">
+                    Tasks
+                </li>
+                <li>
+                    <a href="LearningTask/week6/task1/Week6LearningTask1.html" id="p61"> </a>
+                </li>
+                <li>
+                    <a href="LearningTask/week6/task2/Week6LearningTask2.html" id="p62"> </a>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <!-- /page6 -->
+
+    <!-- page7 -->
+    <div data-role="page" id="page7" data-theme="c">
+
+        <div role="main" class="ui-content">
+            <!-- /content -->
+            <ol data-role="listview" data-inset="true">
+                <li data-role="list-divider">
+                    Tasks
+                </li>
+                <li>
+                    <a href="LearningTask/week7/task1/Week7LearningTask1.html" id="p71"> </a>
+                </li>
+                <li>
+                    <a href="LearningTask/week7/task2/Week7LearningTask2.html" id="p72"> </a>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <!-- /page7 -->
+
+</body>
+
+</html>

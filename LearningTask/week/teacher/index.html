@@ -1,0 +1,64 @@
+
+<!doctype html>
+<head>
+    <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBbemHmAixV7OFoZzZOKeDCRUyfNdX7VaM",
+    authDomain: "mobiledevelopment-698f9.firebaseapp.com",
+    databaseURL: "https://mobiledevelopment-698f9.firebaseio.com",
+    storageBucket: "mobiledevelopment-698f9.appspot.com",
+    messagingSenderId: "1037321758761"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    $("document").ready(function() {
+        $("#password").focus();
+      });
+    </script>
+</head>
+<body>
+<div class="page" data-role="page"  data-theme="a">
+	<style>
+		* {
+			line-height: 1.5;
+			font-family: 'Helvetica Neue', sans-serif;
+		}
+		body {
+			margin-top: 0;
+			background-color: #f9f9f9;
+		}
+		.page {
+			width: 650px;
+			margin: auto;
+			padding: 25px;
+			background-color: #f0f0f0;
+		}
+
+	</style>
+		<div id="securewall">
+       <button id="passSubmit"> Sign in </button>
+        <script src="../../../js/teacher.js">
+        </script>
+    </div>
+    	<div role="main" class="ui-content secure" style="display:none;">
+		<h1> Teacher Area </h1>
+    For each week you can use the teacher button to access the teacher manual. 
+    
+    If you encounter errors in the learning tasks, please write them down 
+    <a href="https://docs.google.com/document/d/1uk7O5iXUNnD6woDtf8v0V2gpAym1oXjjGfeEF5VWVlY/edit?usp=sharing">here</a>.
+    <br><br>
+    Styles and code conventions we use can be found
+    <a href="https://docs.google.com/document/d/1ZxwqCeiRXD3_Po571Fr80Gm9ObB7AsglBM4xil3bLjA/edit?usp=sharing">here</a>
+    
+            
+    Ideas for next year can be put here:        
+    <a href ="https://docs.google.com/document/d/1DAQTfH9jQeI6yPPDsBdkWyQFR2u-03jBMDS51tJsy3M/edit?usp=sharing">here</a>
+    
+	</div>
+
+</div>
+</body>
